@@ -4,7 +4,42 @@
 .venv/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.ruff_cache/
 /settings.toml
+.DS_Store
 
 /alphas/**
 !/alphas/.gitkeep
+
+# AI Assistants
+.claude/
+.agent/
+.worktrees/
+.superpowers/
+
+# Ignore the docs directory and all its contents
+bin/
+docs/
+temp/
+CLAUDE.md
+AGENTS.md
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Text editor & IDE temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
