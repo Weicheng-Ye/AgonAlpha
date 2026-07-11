@@ -1,0 +1,172 @@
+# TS Regression Operator
+
+Course: Time Series Operators
+Category: Operators
+Duration: PT6M21S
+Source: VidYard
+Last modified: 2023-04-28T11:26:19.998355-04:00
+
+## Description
+
+This video discusses how to create an alpha using linear regression and the mean reversion model, which states that prices revert to their mean over time.
+The four graphical results in the video starting at 5:22 (Alpha Coverage, Capital Distribution, PnL by Capitalization and Sharpe by Sector) are visible on the BRAIN platform only to consultants. The simulation setting “Max stock weight” has been renamed to “Truncation”.
+
+## Transcript
+
+The first step
+in building an Alpha is having
+an idea.
+I'll try to explain the basic
+idea of reversion.
+The hypothesis is,
+if something increases today, it
+will fall tomorrow.
+And if something decreases today, it
+will increase tomorrow.
+Now this something can be anything
+price,
+volume, correlation between
+two things or anything else.
+And let's try to test this idea
+using price.
+The very basic implementation could be
+minus of returns, so
+returns is equal to today's
+price, minus yesterday's price,
+the whole divided by yesterday's price.
+The backtesting simulation
+runs for the previous five years
+to generate an Alpha vector for
+each day.
+If the value of the stock is negative,
+the simulators shorts the stock
+and it goes long on the stocks with
+positive values.
+If today's price is greater
+than yesterday's price,
+the numerator is positive
+and according to our hypothesis,
+tomorrow the price will fall, so
+I should short the stock.
+We will put a negative sign in front of
+the expression to achieve this objective.
+Similarly, if today's price is
+less than yesterday's price,
+the numerator is negative and
+according to our hypothesis,
+the price will increase tomorrow.
+So, we should long the stock.
+A negative sign in front of the expression
+will make it positive. And we will achieve
+what we wanted to do.
+This simple implementation works.
+Now I'll talk about an alternate implementation
+of this idea using the regression
+operators.
+So this is what the regression operator does.
+It takes as input five
+variables.
+The first one is the dependent variable
+that we want to predict.
+The second is the independent variable.
+The third input is the time window
+for which we want to run the regression.
+The 4th one is the lag in
+the independent variable we want
+to use to predict the dependent
+variable. And finally,
+we provide the operator that
+we need as the output.
+Is it the error term,
+Is it the constant in the regression
+equation?
+Is it the beta coefficient or
+is it the estimate of the dependent variable
+In the simulation environment we are using
+the top 3000 US  stocks on
+the basis of the liquidity.
+The maximum capital any stock
+can take is 10%.
+And I'm using the data with a delay
+of one to prevent any
+look ahead bias.
+All of these settings can be taken care
+of in this simulation settings tab.
+You can see on your screen
+the implementation of this idea.
+Yeah, so I have used the predicted
+price from the regression equation
+using the actual price from
+the data. The time series
+rank of the formula helps us
+understand if the current level
+of the ratio is high compared
+with the normal level over the
+past 60 trading days
+for any given stock.
+It outputs a number between
+zero and 1
+Where zero represents a low value
+of the ratio
+and one represents a high value.
+To enhance the signal's performance
+information using the volume data
+is added, as you can see in the
+implementation,
+the ratio of the current volume
+to the average volume is calculated.
+If the returns and
+the volume ratio both are high,
+it might signify that an
+important event has happened in
+the market leading to a trend
+and a weaker reversion.
+And that is the reason why we have
+used 1 - rank of volume
+ratio
+along with the minus of
+predicted returns in the implementation.
+So this is basically a long-short
+market neutral Alpha neutralized
+over the subindustry.
+Now let's look at the results and
+analyze the performance parameters.
+The Sharpe of this Alpha is 2.4.
+The returns are 7.5%.
+The returns-to-drawdown ratio is
+greater than one, which is a good sign
+and the turnover, which reflects the
+cost of trading, is not high.
+The more consistent the Sharpe, as we discussed
+across various years in the in-sample,
+the higher our confidence in the idea.
+And we all know the phrase higher
+risk, higher returns.
+In this case, the higher the ratio
+of returns to drawdown, the better
+the Alpha is,
+and again lower the turnover,
+the better it is for the Alpha.
+If we look at the detailed results,
+we see that the coverage
+is good across the universe we
+decided to trade.
+The PnL generated from different
+capitalization of stocks
+is good,
+which means that we have predictability
+across different capitalization
+groups.
+And if we look at the capital distribution
+across industries, we see
+that the capital is well distributed
+across various industries,
+and finally, if we look at the Sharpe
+generated by various sectors,
+we have good prediction across
+various sectors, for this Alpha.
+So this example highlights how
+different kinds of data interact
+with one another, and how combining
+information from them can help
+us strengthen the Alpha idea.

@@ -1,0 +1,193 @@
+{
+  "id": "news18",
+  "name": "Ravenpack News Data",
+  "description": "This dataset provides structured analytics derived from global news sources, focusing on sentiment, event detection, and entity relevance for financial markets. It includes granular sentiment scores for specific events and entities, measures of event novelty and relevance, and a comprehensive taxonomy for classifying news events. The data covers a wide range of entities such as companies, products, people, and macroeconomic factors, and is enriched with metadata like event timing, fact level, and source trustworthiness. By quantifying the tone and impact of news stories, this dataset enables investors and researchers to systematically monitor market sentiment, identify significant events, and generate predictive signals for price movements, making it a valuable tool for quantitative trading, risk management, and alpha generation.",
+  "category": {
+    "id": "news",
+    "name": "News"
+  },
+  "subcategory": {
+    "id": "news-news-sentiment",
+    "name": "News Sentiment"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9746,
+      "valueScore": 1.0,
+      "userCount": 9,
+      "alphaCount": 10,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9746,
+      "valueScore": 1.0,
+      "userCount": 3,
+      "alphaCount": 4,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9746,
+      "valueScore": 1.0,
+      "userCount": 5,
+      "alphaCount": 6,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9746,
+      "valueScore": 1.0,
+      "userCount": 221,
+      "alphaCount": 381,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9746,
+      "valueScore": 1.0,
+      "userCount": 8,
+      "alphaCount": 8,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9746,
+      "valueScore": 1.0,
+      "userCount": 3,
+      "alphaCount": 4,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7301,
+      "valueScore": 1.0,
+      "userCount": 1020,
+      "alphaCount": 1859,
+      "fieldCount": 121,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.7301,
+      "valueScore": 1.0,
+      "userCount": 151,
+      "alphaCount": 571,
+      "fieldCount": 121,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7301,
+      "valueScore": 1.0,
+      "userCount": 741,
+      "alphaCount": 1039,
+      "fieldCount": 121,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7301,
+      "valueScore": 1.0,
+      "userCount": 8074,
+      "alphaCount": 52838,
+      "fieldCount": 121,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.7301,
+      "valueScore": 1.0,
+      "userCount": 1143,
+      "alphaCount": 1614,
+      "fieldCount": 121,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.7301,
+      "valueScore": 1.0,
+      "userCount": 357,
+      "alphaCount": 605,
+      "fieldCount": 121,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    }
+  ],
+  "researchPapers": [
+    {
+      "type": "research",
+      "title": "Research Paper 01: The Momentum of News",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/13954113156503-Research-Paper-01-The-Momentum-of-News"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 05: Predictability of Industry Returns After M&A Announcements",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15236009752215-Research-Paper-05-Predictability-of-Industry-Returns-After-M-A-Announcements"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 11: Analyst Following Along the Supply Chain",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15770899735703-Research-Paper-11-Analyst-Following-Along-the-Supply-Chain"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 13: Valuation Ratios, Surprises, Uncertainty or Sentiment: How Does Financial Machine Learning Predict Returns From Earnings Announcements?",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465058281495-Research-Paper-13-Valuation-Ratios-Surprises-Uncertainty-or-Sentiment-How-Does-Financial-Machine-Learning-Predict-Returns-From-Earnings-Announcements"
+    }
+  ]
+}

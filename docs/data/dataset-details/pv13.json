@@ -1,0 +1,166 @@
+{
+  "id": "pv13",
+  "name": "Relationship Data for Equity",
+  "description": "This dataset provides a mapping between Bloomberg IDs (BBID) and Refinitiv Instrument Codes (RIC), enabling users to link securities across Bloomberg and Refinitiv platforms. The data is sourced from both Bloomberg and Refinitiv, and maintained for integration and operational purposes rather than general research. While not directly predictive of price movements, this mapping is essential for harmonizing datasets, ensuring accurate cross-platform security identification, and supporting multi-source data analysis in quantitative research and portfolio management workflows.",
+  "category": {
+    "id": "pv",
+    "name": "Price Volume"
+  },
+  "subcategory": {
+    "id": "pv-relationship",
+    "name": "Relationship"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "coverage": 0.6987,
+      "valueScore": 1.0,
+      "userCount": 33,
+      "alphaCount": 57,
+      "fieldCount": 37,
+      "themes": [],
+      "dateUpdated": "2022-08-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "coverage": 0.6987,
+      "valueScore": 1.0,
+      "userCount": 15,
+      "alphaCount": 16,
+      "fieldCount": 37,
+      "themes": [],
+      "dateUpdated": "2022-08-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "coverage": 0.6987,
+      "valueScore": 1.0,
+      "userCount": 27,
+      "alphaCount": 37,
+      "fieldCount": 37,
+      "themes": [],
+      "dateUpdated": "2022-08-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "coverage": 0.6987,
+      "valueScore": 1.0,
+      "userCount": 593,
+      "alphaCount": 1233,
+      "fieldCount": 37,
+      "themes": [],
+      "dateUpdated": "2022-08-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "coverage": 0.6987,
+      "valueScore": 1.0,
+      "userCount": 27,
+      "alphaCount": 33,
+      "fieldCount": 37,
+      "themes": [],
+      "dateUpdated": "2022-08-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "coverage": 0.6987,
+      "valueScore": 1.0,
+      "userCount": 11,
+      "alphaCount": 18,
+      "fieldCount": 37,
+      "themes": [],
+      "dateUpdated": "2022-08-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7977,
+      "valueScore": 1.0,
+      "userCount": 2767,
+      "alphaCount": 7544,
+      "fieldCount": 165,
+      "themes": [],
+      "dateUpdated": "2025-11-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.7977,
+      "valueScore": 1.0,
+      "userCount": 524,
+      "alphaCount": 2446,
+      "fieldCount": 165,
+      "themes": [],
+      "dateUpdated": "2025-11-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7977,
+      "valueScore": 1.0,
+      "userCount": 833,
+      "alphaCount": 1516,
+      "fieldCount": 165,
+      "themes": [],
+      "dateUpdated": "2025-11-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7977,
+      "valueScore": 1.0,
+      "userCount": 17196,
+      "alphaCount": 155680,
+      "fieldCount": 165,
+      "themes": [],
+      "dateUpdated": "2025-11-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.7977,
+      "valueScore": 1.0,
+      "userCount": 2773,
+      "alphaCount": 6646,
+      "fieldCount": 165,
+      "themes": [],
+      "dateUpdated": "2025-11-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.7977,
+      "valueScore": 1.0,
+      "userCount": 942,
+      "alphaCount": 1718,
+      "fieldCount": 165,
+      "themes": [],
+      "dateUpdated": "2025-11-01"
+    }
+  ],
+  "researchPapers": []
+}

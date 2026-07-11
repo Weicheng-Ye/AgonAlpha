@@ -1,0 +1,183 @@
+{
+  "id": "socialmedia12",
+  "name": "Sentiment Data for Equity",
+  "description": "This dataset aggregates and analyzes social media posts and news articles related to financial markets, covering thousands of sources and several years of historical data. It quantifies market sentiment and buzz for individual assets, sectors, and indices using advanced natural language processing and machine learning techniques. The data includes sentiment scores, buzz indicators, and trading signals, which are statistically validated and can be used to identify shifts in market mood, anticipate volatility, and generate actionable buy/sell signals. By monitoring real-time and historical sentiment, traders and analysts can enhance their price movement predictions and improve portfolio performance through timely, data-driven decisions.",
+  "category": {
+    "id": "socialmedia",
+    "name": "Social Media"
+  },
+  "subcategory": {
+    "id": "socialmedia-social-media",
+    "name": "Social Media"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 43,
+      "alphaCount": 54,
+      "fieldCount": 9,
+      "themes": [],
+      "dateUpdated": "2022-07-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 21,
+      "alphaCount": 23,
+      "fieldCount": 9,
+      "themes": [],
+      "dateUpdated": "2022-07-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 25,
+      "alphaCount": 34,
+      "fieldCount": 9,
+      "themes": [],
+      "dateUpdated": "2022-07-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 520,
+      "alphaCount": 979,
+      "fieldCount": 9,
+      "themes": [],
+      "dateUpdated": "2022-07-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 34,
+      "alphaCount": 38,
+      "fieldCount": 9,
+      "themes": [],
+      "dateUpdated": "2022-07-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 18,
+      "alphaCount": 22,
+      "fieldCount": 9,
+      "themes": [],
+      "dateUpdated": "2022-07-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9855,
+      "valueScore": 1.0,
+      "userCount": 1034,
+      "alphaCount": 1759,
+      "fieldCount": 18,
+      "themes": [],
+      "dateUpdated": "2025-12-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9855,
+      "valueScore": 1.0,
+      "userCount": 1420,
+      "alphaCount": 2240,
+      "fieldCount": 18,
+      "themes": [],
+      "dateUpdated": "2025-12-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9855,
+      "valueScore": 1.0,
+      "userCount": 672,
+      "alphaCount": 1025,
+      "fieldCount": 18,
+      "themes": [],
+      "dateUpdated": "2025-12-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9855,
+      "valueScore": 1.0,
+      "userCount": 21928,
+      "alphaCount": 54507,
+      "fieldCount": 18,
+      "themes": [],
+      "dateUpdated": "2025-12-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9855,
+      "valueScore": 1.0,
+      "userCount": 966,
+      "alphaCount": 1919,
+      "fieldCount": 18,
+      "themes": [],
+      "dateUpdated": "2025-12-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9855,
+      "valueScore": 1.0,
+      "userCount": 422,
+      "alphaCount": 770,
+      "fieldCount": 18,
+      "themes": [],
+      "dateUpdated": "2025-12-01"
+    }
+  ],
+  "researchPapers": [
+    {
+      "type": "research",
+      "title": "Research Paper 01: The Momentum of News",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/13954113156503-Research-Paper-01-The-Momentum-of-News"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 02: Tomorrow's Fish and Chip Paper? Slowly incorporated News and the Cross-section of Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/14302034193687-Research-Paper-02-Tomorrow-s-Fish-and-Chip-Paper-Slowly-incorporated-News-and-the-Cross-section-of-Stock-Returns"
+    }
+  ]
+}

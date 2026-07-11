@@ -1,0 +1,172 @@
+{
+  "id": "socialmedia8",
+  "name": "Social Media Data for Equity",
+  "description": "This dataset provides quantitative sentiment metrics for US equities based on Twitter messages, covering the Russell 3000 universe since December 2011. It includes a suite of S-Factors such as S-Score (normalized sentiment), S-Volume (tweet volume), S-Dispersion (source diversity), S-Buzz (abnormal activity), and S-Delta (sentiment trend), all calculated using both unweighted and exponentially weighted methods. The methodology incorporates a 20-day lookback window to smooth signals for stocks with sparse tweet activity, reducing noise and spurious spikes. These metrics are updated at minute-level granularity and can be used to identify sentiment-driven price movements, forecast short-term returns, detect market events, and enhance quantitative trading strategies by providing real-time and historical sentiment signals.",
+  "category": {
+    "id": "socialmedia",
+    "name": "Social Media"
+  },
+  "subcategory": {
+    "id": "socialmedia-social-media",
+    "name": "Social Media"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 13,
+      "alphaCount": 16,
+      "fieldCount": 2,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 12,
+      "alphaCount": 13,
+      "fieldCount": 2,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 8,
+      "alphaCount": 8,
+      "fieldCount": 2,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 220,
+      "alphaCount": 361,
+      "fieldCount": 2,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 16,
+      "alphaCount": 17,
+      "fieldCount": 2,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 11,
+      "alphaCount": 14,
+      "fieldCount": 2,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9999,
+      "valueScore": 1.0,
+      "userCount": 281,
+      "alphaCount": 935,
+      "fieldCount": 4,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9999,
+      "valueScore": 1.0,
+      "userCount": 221,
+      "alphaCount": 1990,
+      "fieldCount": 4,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9999,
+      "valueScore": 1.0,
+      "userCount": 179,
+      "alphaCount": 247,
+      "fieldCount": 4,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9999,
+      "valueScore": 1.0,
+      "userCount": 5694,
+      "alphaCount": 14847,
+      "fieldCount": 4,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9999,
+      "valueScore": 1.0,
+      "userCount": 516,
+      "alphaCount": 1462,
+      "fieldCount": 4,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9999,
+      "valueScore": 1.0,
+      "userCount": 104,
+      "alphaCount": 729,
+      "fieldCount": 4,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    }
+  ],
+  "researchPapers": []
+}

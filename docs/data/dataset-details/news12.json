@@ -1,0 +1,172 @@
+{
+  "id": "news12",
+  "name": "US News Data",
+  "description": "This dataset integrates real-time news events and market data to capture the immediate and subsequent price reactions of stocks to a wide range of news and corporate announcements. It includes detailed fields such as news headlines, timestamps, price and volume changes across different trading sessions, analyst actions, earnings surprises, and sector-specific news tags. By quantifying the impact of news on price movements at granular intervals (from seconds to hours), the dataset enables users to identify patterns of underreaction, overreaction, and momentum following news releases. This information is highly valuable for developing event-driven trading strategies, backtesting news-based signals, and enhancing alpha generation by systematically exploiting the relationship between news flow and market behavior.",
+  "category": {
+    "id": "news",
+    "name": "News"
+  },
+  "subcategory": {
+    "id": "news-news",
+    "name": "News"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.8237,
+      "valueScore": 1.0,
+      "userCount": 106,
+      "alphaCount": 140,
+      "fieldCount": 737,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.8237,
+      "valueScore": 1.0,
+      "userCount": 10,
+      "alphaCount": 12,
+      "fieldCount": 737,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.8237,
+      "valueScore": 1.0,
+      "userCount": 58,
+      "alphaCount": 73,
+      "fieldCount": 737,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.8237,
+      "valueScore": 1.0,
+      "userCount": 2044,
+      "alphaCount": 4397,
+      "fieldCount": 737,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.8237,
+      "valueScore": 1.0,
+      "userCount": 30,
+      "alphaCount": 32,
+      "fieldCount": 737,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.8237,
+      "valueScore": 1.0,
+      "userCount": 16,
+      "alphaCount": 19,
+      "fieldCount": 737,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.8228,
+      "valueScore": 1.0,
+      "userCount": 3900,
+      "alphaCount": 6076,
+      "fieldCount": 875,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.8228,
+      "valueScore": 1.0,
+      "userCount": 993,
+      "alphaCount": 1650,
+      "fieldCount": 875,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.8228,
+      "valueScore": 1.0,
+      "userCount": 726,
+      "alphaCount": 1572,
+      "fieldCount": 875,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.8228,
+      "valueScore": 1.0,
+      "userCount": 27497,
+      "alphaCount": 151308,
+      "fieldCount": 875,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.8228,
+      "valueScore": 1.0,
+      "userCount": 2141,
+      "alphaCount": 2990,
+      "fieldCount": 875,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.8228,
+      "valueScore": 1.0,
+      "userCount": 618,
+      "alphaCount": 946,
+      "fieldCount": 875,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    }
+  ],
+  "researchPapers": []
+}

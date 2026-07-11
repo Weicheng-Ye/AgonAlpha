@@ -1,0 +1,244 @@
+[
+  {
+    "id": "analyst",
+    "name": "Analyst",
+    "datasetCount": 1,
+    "fieldCount": 1374,
+    "alphaCount": 1764417,
+    "userCount": 47977,
+    "valueScore": 4.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "analyst-analyst-estimates",
+        "name": "Analyst Estimates",
+        "datasetCount": 1,
+        "fieldCount": 1374,
+        "alphaCount": 1645084,
+        "userCount": 47884,
+        "valueScore": 2.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fundamental",
+    "name": "Fundamental",
+    "datasetCount": 2,
+    "fieldCount": 1758,
+    "alphaCount": 1650849,
+    "userCount": 87430,
+    "valueScore": 4.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "fundamental-footnotes",
+        "name": "Footnotes",
+        "datasetCount": 1,
+        "fieldCount": 766,
+        "alphaCount": 150240,
+        "userCount": 35893,
+        "valueScore": 2.0,
+        "region": [
+          "USA"
+        ]
+      },
+      {
+        "id": "fundamental-fundamental-data",
+        "name": "Fundamental Data",
+        "datasetCount": 1,
+        "fieldCount": 992,
+        "alphaCount": 1493640,
+        "userCount": 86050,
+        "valueScore": 2.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "model",
+    "name": "Model",
+    "datasetCount": 2,
+    "fieldCount": 40,
+    "alphaCount": 1897465,
+    "userCount": 25964,
+    "valueScore": 7.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "model-risk-models",
+        "name": "Risk Models",
+        "datasetCount": 1,
+        "fieldCount": 16,
+        "alphaCount": 54555,
+        "userCount": 11541,
+        "valueScore": 3.0,
+        "region": [
+          "USA"
+        ]
+      },
+      {
+        "id": "model-valuation-models",
+        "name": "Valuation Models",
+        "datasetCount": 1,
+        "fieldCount": 24,
+        "alphaCount": 541641,
+        "userCount": 14028,
+        "valueScore": 3.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "news",
+    "name": "News",
+    "datasetCount": 2,
+    "fieldCount": 1021,
+    "alphaCount": 383795,
+    "userCount": 34022,
+    "valueScore": 3.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "news-news",
+        "name": "News",
+        "datasetCount": 1,
+        "fieldCount": 900,
+        "alphaCount": 244615,
+        "userCount": 30691,
+        "valueScore": 2.0,
+        "region": [
+          "USA"
+        ]
+      },
+      {
+        "id": "news-news-sentiment",
+        "name": "News Sentiment",
+        "datasetCount": 1,
+        "fieldCount": 121,
+        "alphaCount": 150804,
+        "userCount": 12163,
+        "valueScore": 3.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "option",
+    "name": "Option",
+    "datasetCount": 2,
+    "fieldCount": 138,
+    "alphaCount": 317952,
+    "userCount": 35977,
+    "valueScore": 6.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "option-option-analytics",
+        "name": "Option Analytics",
+        "datasetCount": 1,
+        "fieldCount": 74,
+        "alphaCount": 85101,
+        "userCount": 21326,
+        "valueScore": 3.0,
+        "region": [
+          "USA"
+        ]
+      },
+      {
+        "id": "option-option-volatility",
+        "name": "Option Volatility",
+        "datasetCount": 1,
+        "fieldCount": 64,
+        "alphaCount": 231187,
+        "userCount": 33085,
+        "valueScore": 4.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pv",
+    "name": "Price Volume",
+    "datasetCount": 3,
+    "fieldCount": 202,
+    "alphaCount": 4305988,
+    "userCount": 88799,
+    "valueScore": 2.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "pv-price-volume",
+        "name": "Price Volume",
+        "datasetCount": 2,
+        "fieldCount": 32,
+        "alphaCount": 4236804,
+        "userCount": 88267,
+        "valueScore": 1.0,
+        "region": [
+          "USA"
+        ]
+      },
+      {
+        "id": "pv-relationship",
+        "name": "Relationship",
+        "datasetCount": 1,
+        "fieldCount": 170,
+        "alphaCount": 226571,
+        "userCount": 20670,
+        "valueScore": 4.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "socialmedia",
+    "name": "Social Media",
+    "datasetCount": 2,
+    "fieldCount": 22,
+    "alphaCount": 114519,
+    "userCount": 27159,
+    "valueScore": 2.0,
+    "region": [
+      "USA"
+    ],
+    "children": [
+      {
+        "id": "socialmedia-social-media",
+        "name": "Social Media",
+        "datasetCount": 2,
+        "fieldCount": 22,
+        "alphaCount": 114519,
+        "userCount": 27159,
+        "valueScore": 1.0,
+        "region": [
+          "USA"
+        ]
+      }
+    ]
+  }
+]

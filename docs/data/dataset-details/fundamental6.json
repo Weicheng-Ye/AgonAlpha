@@ -1,0 +1,218 @@
+{
+  "id": "fundamental6",
+  "name": "Company Fundamental Data for Equity",
+  "description": "This dataset provides comprehensive, point-in-time global company fundamental data, capturing daily snapshots of financial statements, balance sheets, cash flows, and key ratios as they were known to the market at each historical date. It includes restatements, amendments, and all changes, ensuring accurate backtesting and minimizing look-ahead bias. The dataset covers a wide range of standardized and normalized financial metrics across regions and industries, making it a critical resource for quantitative research, factor modeling, and alpha generation. By reflecting the true information set available to investors at any given time, it enables robust prediction of price movements and supports the development of systematic investment strategies.",
+  "category": {
+    "id": "fundamental",
+    "name": "Fundamental"
+  },
+  "subcategory": {
+    "id": "fundamental-fundamental-data",
+    "name": "Fundamental Data"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 464,
+      "alphaCount": 685,
+      "fieldCount": 342,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 97,
+      "alphaCount": 209,
+      "fieldCount": 342,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 109,
+      "alphaCount": 165,
+      "fieldCount": 342,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 4067,
+      "alphaCount": 11334,
+      "fieldCount": 342,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 942,
+      "alphaCount": 1241,
+      "fieldCount": 342,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 175,
+      "alphaCount": 216,
+      "fieldCount": 342,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 14560,
+      "alphaCount": 30396,
+      "fieldCount": 886,
+      "themes": [],
+      "dateUpdated": "2022-09-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 9742,
+      "alphaCount": 19558,
+      "fieldCount": 886,
+      "themes": [],
+      "dateUpdated": "2022-09-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 3114,
+      "alphaCount": 6599,
+      "fieldCount": 886,
+      "themes": [],
+      "dateUpdated": "2022-09-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 81460,
+      "alphaCount": 785942,
+      "fieldCount": 886,
+      "themes": [],
+      "dateUpdated": "2022-09-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 18377,
+      "alphaCount": 38581,
+      "fieldCount": 886,
+      "themes": [],
+      "dateUpdated": "2022-09-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.5,
+      "valueScore": 1.0,
+      "userCount": 3498,
+      "alphaCount": 5841,
+      "fieldCount": 886,
+      "themes": [],
+      "dateUpdated": "2022-09-01"
+    }
+  ],
+  "researchPapers": [
+    {
+      "type": "research",
+      "title": "Research Paper 03: Cross-Firm Information Flows and the Predictability of Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/14626658089495-Research-Paper-03-Cross-Firm-Information-Flows-and-the-Predictability-of-Stock-Returns"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 04: Are Cash Flows Better Stock Return Predictors than Profits?",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/14932488666903-Research-Paper-04-Are-Cash-Flows-Better-Stock-Return-Predictors-than-Profits"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 06: Penny Wise, Dollar Foolish: Buy-Sell Imbalances On and Around Round Numbers",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15440417945623-Research-Paper-06-Penny-Wise-Dollar-Foolish-Buy-Sell-Imbalances-On-and-Around-Round-Numbers"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 09: The Invisible Burden",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465017312535-Research-Paper-09-The-Invisible-Burden"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 10: Disagreement in Option Market and Cross Section Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465061985047-Research-Paper-10-Disagreement-in-Option-Market-and-Cross-Section-Stock-Returns"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 11: Analyst Following Along the Supply Chain",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15770899735703-Research-Paper-11-Analyst-Following-Along-the-Supply-Chain"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 12: Stock Recommendations from Stochastic Discounted Cash Flows",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15770966939671-Research-Paper-12-Stock-Recommendations-from-Stochastic-Discounted-Cash-Flows"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 13: Valuation Ratios, Surprises, Uncertainty or Sentiment: How Does Financial Machine Learning Predict Returns From Earnings Announcements?",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465058281495-Research-Paper-13-Valuation-Ratios-Surprises-Uncertainty-or-Sentiment-How-Does-Financial-Machine-Learning-Predict-Returns-From-Earnings-Announcements"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 14: What Insiders Know About Future Earnings and How They Use it: Evidence from Insider Trades",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465067937687-Research-Paper-14-What-Insiders-Know-About-Future-Earnings-and-How-They-Use-it-Evidence-from-Insider-Trades"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": "model51",
+  "name": "Systematic Risk Metrics",
+  "description": "This dataset provides a comprehensive suite of risk metrics for optionable US equities, including measures such as beta, correlation, systematic and unsystematic risk, and implied volatility across multiple future time horizons. By quantifying both market-wide and company-specific risks, the dataset enables investors and analysts to assess the sensitivity of individual stocks to broader market movements and to identify potential sources of volatility. These metrics are particularly valuable for constructing risk-aware portfolios, evaluating hedging strategies, and forecasting price movements based on changes in risk profiles. The daily updates and granular coverage make it a powerful tool for dynamic risk management and predictive modeling in equity markets.",
+  "category": {
+    "id": "model",
+    "name": "Model"
+  },
+  "subcategory": {
+    "id": "model-risk-models",
+    "name": "Risk Models"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9626,
+      "valueScore": 1.0,
+      "userCount": 1345,
+      "alphaCount": 2353,
+      "fieldCount": 16,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9626,
+      "valueScore": 1.0,
+      "userCount": 334,
+      "alphaCount": 734,
+      "fieldCount": 16,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9626,
+      "valueScore": 1.0,
+      "userCount": 459,
+      "alphaCount": 579,
+      "fieldCount": 16,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9626,
+      "valueScore": 1.0,
+      "userCount": 8864,
+      "alphaCount": 38609,
+      "fieldCount": 16,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9626,
+      "valueScore": 1.0,
+      "userCount": 1576,
+      "alphaCount": 2613,
+      "fieldCount": 16,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9626,
+      "valueScore": 1.0,
+      "userCount": 560,
+      "alphaCount": 712,
+      "fieldCount": 16,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    }
+  ],
+  "researchPapers": []
+}

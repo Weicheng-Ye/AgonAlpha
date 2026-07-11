@@ -1,0 +1,172 @@
+{
+  "id": "univ1",
+  "name": "Universe Dataset",
+  "description": "No dataset description",
+  "category": {
+    "id": "pv",
+    "name": "Price Volume"
+  },
+  "subcategory": {
+    "id": "pv-price-volume",
+    "name": "Price Volume"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 3,
+      "alphaCount": 5,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 3,
+      "alphaCount": 4,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 2,
+      "alphaCount": 4,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 34,
+      "alphaCount": 103,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 3,
+      "alphaCount": 3,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 3.0,
+      "userCount": 0,
+      "alphaCount": 0,
+      "fieldCount": 6,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    }
+  ],
+  "researchPapers": []
+}

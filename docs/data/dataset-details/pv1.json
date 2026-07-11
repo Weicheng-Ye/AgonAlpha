@@ -1,0 +1,218 @@
+{
+  "id": "pv1",
+  "name": "Price Volume Data for Equity",
+  "description": "The dataset contains financial data related to equities, including metrics such as prices (open, high, low, close), trading volumes, market capitalization, returns, dividends, splits, and other key indicators that provide insights into stock performance and market activity.",
+  "category": {
+    "id": "pv",
+    "name": "Price Volume"
+  },
+  "subcategory": {
+    "id": "pv-price-volume",
+    "name": "Price Volume"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 810,
+      "alphaCount": 1482,
+      "fieldCount": 21,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 201,
+      "alphaCount": 363,
+      "fieldCount": 21,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 279,
+      "alphaCount": 722,
+      "fieldCount": 21,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 5756,
+      "alphaCount": 25602,
+      "fieldCount": 21,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 488,
+      "alphaCount": 831,
+      "fieldCount": 21,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 219,
+      "alphaCount": 366,
+      "fieldCount": 21,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 19437,
+      "alphaCount": 70046,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 11466,
+      "alphaCount": 37223,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 4533,
+      "alphaCount": 12841,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 84258,
+      "alphaCount": 1939207,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 20135,
+      "alphaCount": 59279,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 1.0,
+      "valueScore": 1.0,
+      "userCount": 4618,
+      "alphaCount": 14599,
+      "fieldCount": 24,
+      "themes": [],
+      "dateUpdated": "2026-04-01"
+    }
+  ],
+  "researchPapers": [
+    {
+      "type": "research",
+      "title": "Research Paper 01: The Momentum of News",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/13954113156503-Research-Paper-01-The-Momentum-of-News"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 02: Tomorrow's Fish and Chip Paper? Slowly incorporated News and the Cross-section of Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/14302034193687-Research-Paper-02-Tomorrow-s-Fish-and-Chip-Paper-Slowly-incorporated-News-and-the-Cross-section-of-Stock-Returns"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 03: Cross-Firm Information Flows and the Predictability of Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/14626658089495-Research-Paper-03-Cross-Firm-Information-Flows-and-the-Predictability-of-Stock-Returns"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 05: Predictability of Industry Returns After M&A Announcements",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15236009752215-Research-Paper-05-Predictability-of-Industry-Returns-After-M-A-Announcements"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 07: Relative Strength Strategies for Investing",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15602317429655-Research-Paper-07-Relative-Strength-Strategies-for-Investing"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 08: Good Volatility, Bad Volatility and the Cross-Section of Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15765182114071-Research-Paper-08-Good-Volatility-Bad-Volatility-and-the-Cross-Section-of-Stock-Returns"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 09: The Invisible Burden",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465017312535-Research-Paper-09-The-Invisible-Burden"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 10: Disagreement in Option Market and Cross Section Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465061985047-Research-Paper-10-Disagreement-in-Option-Market-and-Cross-Section-Stock-Returns"
+    },
+    {
+      "type": "research",
+      "title": "Research Paper 14: What Insiders Know About Future Earnings and How They Use it: Evidence from Insider Trades",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465067937687-Research-Paper-14-What-Insiders-Know-About-Future-Earnings-and-How-They-Use-it-Evidence-from-Insider-Trades"
+    }
+  ]
+}

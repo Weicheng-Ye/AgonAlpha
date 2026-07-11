@@ -1,0 +1,100 @@
+{
+  "id": "option9",
+  "name": "Options Analytics",
+  "description": "This dataset provides comprehensive option-driven metrics for over 2,500 US equities, updated daily using end-of-day market data. It includes put/call ratios based on both trading volume and open interest across multiple future time horizons, forward prices, and breakeven levels for all, call, and put options. These metrics are calculated for constant terms ranging from 10 to 1,080 calendar days, offering granular insights into market sentiment, positioning, and expected price levels. By analyzing shifts in put/call ratios, forward prices, and breakeven points, traders and analysts can gauge investor sentiment, identify potential price inflection points, and enhance predictive models for equity price movements.",
+  "category": {
+    "id": "option",
+    "name": "Option"
+  },
+  "subcategory": {
+    "id": "option-option-analytics",
+    "name": "Option Analytics"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9817,
+      "valueScore": 1.0,
+      "userCount": 1799,
+      "alphaCount": 3055,
+      "fieldCount": 74,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9817,
+      "valueScore": 1.0,
+      "userCount": 893,
+      "alphaCount": 3395,
+      "fieldCount": 74,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9817,
+      "valueScore": 1.0,
+      "userCount": 1323,
+      "alphaCount": 2078,
+      "fieldCount": 74,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9817,
+      "valueScore": 1.0,
+      "userCount": 18954,
+      "alphaCount": 64595,
+      "fieldCount": 74,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9817,
+      "valueScore": 1.0,
+      "userCount": 1477,
+      "alphaCount": 2912,
+      "fieldCount": 74,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9817,
+      "valueScore": 1.0,
+      "userCount": 351,
+      "alphaCount": 916,
+      "fieldCount": 74,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    }
+  ],
+  "researchPapers": [
+    {
+      "type": "research",
+      "title": "Research Paper 10: Disagreement in Option Market and Cross Section Stock Returns",
+      "url": "https://support.worldquantbrain.com/hc/en-us/community/posts/15465061985047-Research-Paper-10-Disagreement-in-Option-Market-and-Cross-Section-Stock-Returns"
+    }
+  ]
+}

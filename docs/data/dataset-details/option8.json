@@ -1,0 +1,172 @@
+{
+  "id": "option8",
+  "name": "Volatility Data",
+  "description": "This dataset provides comprehensive daily volatility metrics for over 2,500 US equities, including both historical and option-implied volatilities across multiple time horizons. It features close-to-close and Parkinson historical volatility calculations, as well as at-the-money implied volatilities for calls, puts, and their averages, spanning durations from 10 to 1080 calendar days. Additionally, it includes skew steepness indicators to capture volatility asymmetries. By analyzing the interplay between historical and implied volatility, as well as volatility skew, traders and quantitative analysts can better anticipate price movements, identify periods of heightened risk, and develop options-based trading strategies that exploit volatility mispricings or forecast market direction.",
+  "category": {
+    "id": "option",
+    "name": "Option"
+  },
+  "subcategory": {
+    "id": "option-option-volatility",
+    "name": "Option Volatility"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9697,
+      "valueScore": 1.0,
+      "userCount": 496,
+      "alphaCount": 557,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9697,
+      "valueScore": 1.0,
+      "userCount": 39,
+      "alphaCount": 46,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9697,
+      "valueScore": 1.0,
+      "userCount": 154,
+      "alphaCount": 218,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9697,
+      "valueScore": 1.0,
+      "userCount": 2771,
+      "alphaCount": 5934,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9697,
+      "valueScore": 1.0,
+      "userCount": 56,
+      "alphaCount": 66,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9697,
+      "valueScore": 1.0,
+      "userCount": 41,
+      "alphaCount": 54,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9698,
+      "valueScore": 1.0,
+      "userCount": 5986,
+      "alphaCount": 9881,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.9698,
+      "valueScore": 1.0,
+      "userCount": 1903,
+      "alphaCount": 3730,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9698,
+      "valueScore": 1.0,
+      "userCount": 2209,
+      "alphaCount": 4701,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.9698,
+      "valueScore": 1.0,
+      "userCount": 28862,
+      "alphaCount": 152776,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9698,
+      "valueScore": 1.0,
+      "userCount": 2304,
+      "alphaCount": 4175,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.9698,
+      "valueScore": 1.0,
+      "userCount": 991,
+      "alphaCount": 1903,
+      "fieldCount": 64,
+      "themes": [],
+      "dateUpdated": "2022-05-01"
+    }
+  ],
+  "researchPapers": []
+}

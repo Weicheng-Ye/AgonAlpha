@@ -1,0 +1,172 @@
+{
+  "id": "fundamental2",
+  "name": "Report Footnotes",
+  "description": "This dataset provides granular financial statement footnote data for publicly traded companies, extracted using advanced XBRL technology. It includes detailed disclosures on items such as goodwill, deferred taxes, share-based compensation, and other key financial metrics not typically found in headline financial tables. By enabling users to drill down into historical and cross-company footnote information, the dataset offers unique insights into accounting policies, risk exposures, and non-standard financial events. Such depth of information can help analysts identify hidden risks, spot trends in corporate behavior, and improve the accuracy of fundamental models for predicting price movements.",
+  "category": {
+    "id": "fundamental",
+    "name": "Fundamental"
+  },
+  "subcategory": {
+    "id": "fundamental-footnotes",
+    "name": "Footnotes"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.4385,
+      "valueScore": 1.0,
+      "userCount": 69,
+      "alphaCount": 124,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.4385,
+      "valueScore": 1.0,
+      "userCount": 36,
+      "alphaCount": 92,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.4385,
+      "valueScore": 1.0,
+      "userCount": 36,
+      "alphaCount": 52,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.4385,
+      "valueScore": 1.0,
+      "userCount": 1042,
+      "alphaCount": 2239,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.4385,
+      "valueScore": 1.0,
+      "userCount": 94,
+      "alphaCount": 128,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.4385,
+      "valueScore": 1.0,
+      "userCount": 21,
+      "alphaCount": 47,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.4386,
+      "valueScore": 1.0,
+      "userCount": 1764,
+      "alphaCount": 3456,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.4386,
+      "valueScore": 1.0,
+      "userCount": 3423,
+      "alphaCount": 4778,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.4386,
+      "valueScore": 1.0,
+      "userCount": 489,
+      "alphaCount": 768,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.4386,
+      "valueScore": 1.0,
+      "userCount": 33418,
+      "alphaCount": 130530,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.4386,
+      "valueScore": 1.0,
+      "userCount": 3893,
+      "alphaCount": 6691,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.4386,
+      "valueScore": 1.0,
+      "userCount": 431,
+      "alphaCount": 850,
+      "fieldCount": 766,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    }
+  ],
+  "researchPapers": []
+}

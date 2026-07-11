@@ -1,0 +1,159 @@
+{
+  "count": 5,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": "discover-brain",
+      "category": "Getting Started",
+      "pages": [
+        {
+          "title": "*Read this First * - Starter Pack",
+          "duration": "PT19M",
+          "id": "read-first-starter-pack",
+          "lastModified": "2026-06-15T08:57:22.601732-04:00"
+        },
+        {
+          "title": "Introduction to Alphas",
+          "duration": "PT6M",
+          "id": "about-brain-platform",
+          "lastModified": "2025-09-12T03:33:37.870415-04:00"
+        },
+        {
+          "title": "Introduction to BRAIN Expression Language",
+          "duration": "PT3M",
+          "id": "introduction-brain-expression-language",
+          "lastModified": "2025-03-12T05:14:01.490538-04:00"
+        },
+        {
+          "title": "Intermediate Pack - Understand Results [1/2]",
+          "duration": "PT5M",
+          "id": "intermediate-pack-part-1",
+          "lastModified": "2025-09-08T05:22:10.878298-04:00"
+        },
+        {
+          "title": "Intermediate Pack - Improve your Alpha [2/2]",
+          "duration": "PT5M",
+          "id": "intermediate-pack-part-2",
+          "lastModified": "2025-03-12T05:10:08.846145-04:00"
+        },
+        {
+          "title": "10 Steps to Start on BRAIN",
+          "duration": "PT1M",
+          "id": "10-steps-start-brain-platform",
+          "lastModified": "2025-03-12T05:07:54.001684-04:00"
+        },
+        {
+          "title": "WorldQuant Challenge",
+          "duration": "PT3M",
+          "id": "challenge-help",
+          "lastModified": "2025-03-12T05:07:12.194953-04:00"
+        }
+      ],
+      "duration": "PT42M",
+      "title": "Discover BRAIN",
+      "sequence": 0,
+      "lastModified": "2023-03-30T10:03:04.259135-04:00"
+    },
+    {
+      "id": "create-alphas",
+      "category": "Getting Started",
+      "pages": [
+        {
+          "title": "Simulate your first Alpha",
+          "duration": "PT3M",
+          "id": "running-your-first-alpha",
+          "lastModified": "2026-03-09T06:50:21.997260-04:00"
+        },
+        {
+          "title": "Test Period",
+          "duration": "PT3M",
+          "id": "test-period",
+          "lastModified": "2025-09-08T05:27:48.217204-04:00"
+        },
+        {
+          "title": "How to choose the Simulation Settings",
+          "duration": "PT6M",
+          "id": "simulation-settings",
+          "lastModified": "2025-11-05T03:49:33.672757-05:00"
+        },
+        {
+          "title": "⭐ How BRAIN works",
+          "duration": "PT12M",
+          "id": "how-brain-platform-works",
+          "lastModified": "2025-09-08T05:31:37.418082-04:00"
+        }
+      ],
+      "duration": "PT24M",
+      "title": "Create Alphas",
+      "sequence": 2,
+      "lastModified": "2023-03-30T10:03:40.153233-04:00"
+    },
+    {
+      "id": "examples",
+      "category": "Getting Started",
+      "pages": [
+        {
+          "title": "⭐ Alpha Examples for Beginners",
+          "duration": "PT4M",
+          "id": "19-alpha-examples",
+          "lastModified": "2026-03-11T06:37:41.550288-04:00"
+        }
+      ],
+      "duration": "PT4M",
+      "title": "Examples",
+      "sequence": 3,
+      "lastModified": "2026-01-07T00:59:41.390915-05:00"
+    },
+    {
+      "id": "interpret-results",
+      "category": "Interpreting Results",
+      "pages": [
+        {
+          "title": "Clear these tests before submitting an Alpha",
+          "duration": "PT11M",
+          "id": "alpha-submission",
+          "lastModified": "2025-12-01T06:25:03.090749-05:00"
+        },
+        {
+          "title": "Parameters in the Simulation results",
+          "duration": "PT6M",
+          "id": "parameters-simulation-results",
+          "lastModified": "2025-04-04T04:35:07.278227-04:00"
+        }
+      ],
+      "duration": "PT17M",
+      "title": "Interpret Results",
+      "sequence": 4,
+      "lastModified": "2026-01-07T00:58:45.866729-05:00"
+    },
+    {
+      "id": "understanding-data",
+      "category": "Data",
+      "pages": [
+        {
+          "title": "Understanding Data in BRAIN: Key Concepts and Tips",
+          "duration": "PT4M",
+          "id": "data",
+          "lastModified": "2025-03-12T05:55:58.677840-04:00"
+        },
+        {
+          "title": "How to use the Data Explorer",
+          "duration": "PT3M",
+          "id": "how-use-data-explorer",
+          "lastModified": "2025-03-12T05:53:18.035922-04:00"
+        },
+        {
+          "title": "Getting Started with Option6 Implied volatility (IV)",
+          "duration": "PT2M",
+          "id": "getting-started-option6-implied-volatility-iv",
+          "lastModified": "2026-06-15T23:55:25.566566-04:00"
+        }
+      ],
+      "duration": "PT9M",
+      "title": "Understanding Data",
+      "sequence": 5,
+      "lastModified": "2026-01-07T00:58:25.404498-05:00"
+    }
+  ]
+}

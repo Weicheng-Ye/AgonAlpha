@@ -1,0 +1,64 @@
+{
+  "downloadedAt": "2026-07-10T23:23:23.147236+00:00",
+  "scope": {
+    "instrumentType": "EQUITY",
+    "region": "USA",
+    "delay": 1,
+    "universe": "TOP3000"
+  },
+  "api": {
+    "schemas": 4,
+    "officialPages": 0,
+    "pageStatus": {
+      "brain-api": {
+        "status": 404
+      },
+      "brain-api-iqc-stage-3-users": {
+        "status": 404
+      },
+      "getting-started-brain-python-alphas": {
+        "status": 404
+      },
+      "documentation-ace-api-library-gold": {
+        "status": 404
+      },
+      "documentation-ace-api-library-master": {
+        "status": 404
+      },
+      "documentation-ace-api-library-expert": {
+        "status": 404
+      }
+    }
+  },
+  "tutorials": {
+    "tutorials": 5,
+    "pages": 17,
+    "images": 64
+  },
+  "syntax": {
+    "operators": 66,
+    "categories": 7
+  },
+  "data": {
+    "categories": 7,
+    "datasets": 14,
+    "datasetDetails": 14,
+    "fields": 4367,
+    "researchPapers": 14
+  },
+  "videos": {
+    "courses": 16,
+    "videos": 69,
+    "transcripts": 50
+  },
+  "search": {
+    "reference": 87,
+    "tutorialPage": 82,
+    "video": 55,
+    "recommendedReading": 22,
+    "faq": 97,
+    "event": 8,
+    "competition": 59
+  },
+  "requestCount": 261
+}

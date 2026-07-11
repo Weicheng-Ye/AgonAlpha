@@ -1,0 +1,172 @@
+{
+  "id": "analyst4",
+  "name": "Analyst Estimate Data for Equity",
+  "description": "This dataset provides intraday updates of consensus financial estimates, actuals, and company guidance for over 16,000 global companies, sourced from more than 800 contributing brokers. It includes multiple daily delta files per region, allowing users to track real-time changes in analyst expectations for key financial metrics such as EPS, sales, dividends, cash flow, and industry-specific items. The dataset also offers daily historical consensus timelines, enabling analysis of estimate revisions, surprises, and trends. By capturing the latest market sentiment and analyst forecasts, this data is highly valuable for predicting price movements, identifying earnings momentum, and responding to market-moving events as they unfold.",
+  "category": {
+    "id": "analyst",
+    "name": "Analyst"
+  },
+  "subcategory": {
+    "id": "analyst-analyst-estimates",
+    "name": "Analyst Estimates"
+  },
+  "data": [
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.666,
+      "valueScore": 1.0,
+      "userCount": 45,
+      "alphaCount": 56,
+      "fieldCount": 113,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.666,
+      "valueScore": 1.0,
+      "userCount": 10,
+      "alphaCount": 11,
+      "fieldCount": 113,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.666,
+      "valueScore": 1.0,
+      "userCount": 43,
+      "alphaCount": 71,
+      "fieldCount": 113,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.666,
+      "valueScore": 1.0,
+      "userCount": 825,
+      "alphaCount": 1511,
+      "fieldCount": 113,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.666,
+      "valueScore": 1.0,
+      "userCount": 18,
+      "alphaCount": 19,
+      "fieldCount": 113,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 0,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.666,
+      "valueScore": 1.0,
+      "userCount": 15,
+      "alphaCount": 16,
+      "fieldCount": 113,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP1000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7263,
+      "valueScore": 1.0,
+      "userCount": 5145,
+      "alphaCount": 12371,
+      "fieldCount": 1324,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP200",
+      "dateCoverage": 1.0,
+      "coverage": 0.7263,
+      "valueScore": 1.0,
+      "userCount": 835,
+      "alphaCount": 2111,
+      "fieldCount": 1324,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP2000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7263,
+      "valueScore": 1.0,
+      "userCount": 1309,
+      "alphaCount": 2734,
+      "fieldCount": 1324,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP3000",
+      "dateCoverage": 1.0,
+      "coverage": 0.7263,
+      "valueScore": 1.0,
+      "userCount": 43747,
+      "alphaCount": 712961,
+      "fieldCount": 1324,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.7263,
+      "valueScore": 1.0,
+      "userCount": 3191,
+      "alphaCount": 6181,
+      "fieldCount": 1324,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    },
+    {
+      "region": "USA",
+      "delay": 1,
+      "universe": "TOPSP500",
+      "dateCoverage": 1.0,
+      "coverage": 0.7263,
+      "valueScore": 1.0,
+      "userCount": 2243,
+      "alphaCount": 4423,
+      "fieldCount": 1324,
+      "themes": [],
+      "dateUpdated": "2026-03-01"
+    }
+  ],
+  "researchPapers": []
+}
