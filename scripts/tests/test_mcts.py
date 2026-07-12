@@ -5,6 +5,7 @@ import importlib.util
 import itertools
 import json
 import math
+import shutil
 from argparse import Namespace
 from pathlib import Path
 
@@ -154,6 +155,110 @@ def test_init_preserves_existing_alpha_files_and_refuses_to_reset_state(alphas_d
         mcts.cmd_init(args)
     assert mcts._state_path().read_bytes() == state_before
     assert env_file.read_text() == "sentinel"
+
+
+def test_next_initializes_missing_state_with_defaults(alphas_dir, capsys):
+    alphas_dir.mkdir()
+    env_file = alphas_dir / ".env"
+    env_file.write_text("sentinel")
+
+    mcts.cmd_next(Namespace())
+    output = capsys.readouterr().out
+    state = mcts._load_state()
+
+    assert "CANDIDATE_ID: 0001" in output
+    assert "ANCESTOR_REPORTS:\nnone" in output
+    assert state["config"] == {
+        "ucb_c": mcts.DEFAULT_UCB_C,
+        "pw_k": mcts.DEFAULT_PW_K,
+        "pw_alpha": mcts.DEFAULT_PW_ALPHA,
+    }
+    assert state["nodes"]["0001"]["status"] == "pending"
+    assert mcts._candidate_dir("0001").is_dir()
+    assert env_file.read_text() == "sentinel"
+
+
+def test_discard_pending_is_a_noop_without_state(alphas_dir, capsys):
+    mcts.cmd_discard_pending(Namespace())
+
+    assert capsys.readouterr().out == ""
+    assert not alphas_dir.exists()
+
+
+def test_discard_pending_returns_workdirs_without_deleting_them_and_reuses_ids(
+    alphas_dir, capsys
+):
+    alphas_dir.mkdir()
+    nodes = {
+        "root": mcts._new_node("root", None, 0, "root"),
+        "0001": mcts._new_node("0001", "root", 1, "done"),
+        "0002": mcts._new_node("0002", "0001", 2, "done"),
+        "0003": mcts._new_node("0003", "root", 1, "pending"),
+        "0004": mcts._new_node("0004", "root", 1, "done"),
+        "0005": mcts._new_node("0005", "root", 1, "pending"),
+    }
+    nodes["root"].update(children=["0001", "0003", "0004", "0005"], visits=3)
+    nodes["0001"].update(children=["0002"], visits=2, score=1.0)
+    nodes["0002"].update(visits=1, score=2.0)
+    nodes["0004"].update(visits=1, score=3.0)
+    state = {
+        "method": "alpha-mcts",
+        "next_candidate_num": 5,
+        "config": {
+            "ucb_c": mcts.DEFAULT_UCB_C,
+            "pw_k": mcts.DEFAULT_PW_K,
+            "pw_alpha": mcts.DEFAULT_PW_ALPHA,
+        },
+        "nodes": nodes,
+    }
+    mcts._save_state(state)
+    for cid in ("0003", "0005"):
+        mcts._candidate_dir(cid).mkdir()
+        (mcts._candidate_dir(cid) / "sentinel").write_text(cid)
+
+    mcts.cmd_discard_pending(Namespace())
+    output = capsys.readouterr().out
+    cleaned = mcts._load_state()
+
+    assert output == (
+        f"PENDING_WORKDIR: {mcts._candidate_dir('0003')}\n"
+        f"PENDING_WORKDIR: {mcts._candidate_dir('0005')}\n"
+    )
+    assert set(cleaned["nodes"]) == {"root", "0001", "0002", "0004"}
+    assert cleaned["nodes"]["root"]["children"] == ["0001", "0004"]
+    assert cleaned["next_candidate_num"] == 2
+    for cid in ("0003", "0005"):
+        assert (mcts._candidate_dir(cid) / "sentinel").read_text() == cid
+        shutil.rmtree(mcts._candidate_dir(cid))
+
+    mcts.cmd_next(Namespace())
+    assert "CANDIDATE_ID: 0003" in capsys.readouterr().out
+    mcts.cmd_update(update_args("0003", 0.5))
+    capsys.readouterr()
+    mcts.cmd_next(Namespace())
+    assert "CANDIDATE_ID: 0005" in capsys.readouterr().out
+
+
+def test_discard_pending_rejects_non_pending_descendants_without_modifying_state(
+    alphas_dir, capsys
+):
+    alphas_dir.mkdir()
+    nodes = {
+        "root": mcts._new_node("root", None, 0, "root"),
+        "0001": mcts._new_node("0001", "root", 1, "pending"),
+        "0002": mcts._new_node("0002", "0001", 2, "done"),
+    }
+    nodes["root"]["children"] = ["0001"]
+    nodes["0001"]["children"] = ["0002"]
+    state = {"next_candidate_num": 2, "nodes": nodes}
+    mcts._save_state(state)
+    before = mcts._state_path().read_bytes()
+
+    with pytest.raises(SystemExit, match="pending candidate has non-pending children: 0001"):
+        mcts.cmd_discard_pending(Namespace())
+
+    assert capsys.readouterr().out == ""
+    assert mcts._state_path().read_bytes() == before
 
 
 def test_candidate_flow_persists_widening_ancestry_and_maximize_selection(alphas_dir, capsys):

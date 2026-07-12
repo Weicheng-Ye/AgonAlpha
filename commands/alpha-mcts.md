@@ -12,7 +12,12 @@ You are a dispatcher. Run an MCTS-style alpha search by calling the scheduler an
 - Read `${CLAUDE_PLUGIN_ROOT}/settings.toml`, extract `parallelism`, `model-routing-policy`, `alpha-proposer-model`, and `alpha-reviewer-model`, and report them to the user.
 - Read `${CLAUDE_PLUGIN_ROOT}/references/dispatch_manual.md` and follow it when launching or resuming subagents.
 - Interpret the first argument as the positive integer `ROUNDS`.
-- If `${CLAUDE_PLUGIN_ROOT}/alphas/state.json` does not exist, run `${CLAUDE_PLUGIN_ROOT}/scripts/mcts.py init`.
+
+## Recovery
+
+A previous run may have exited unexpectedly and left unfinished nodes.
+
+- Run `${CLAUDE_PLUGIN_ROOT}/scripts/mcts.py discard-pending` and delete every workdir it returns. If it returns no workdirs, continue.
 
 ## Search
 

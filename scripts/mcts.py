@@ -6,6 +6,7 @@ It only manages tree state and returns the next candidate workdir.
 
 Commands:
   mcts.py init
+  mcts.py discard-pending
   mcts.py next
   mcts.py update --candidate-id ID --score X
 """
@@ -57,9 +58,29 @@ def _new_node(node_id: str, parent: str | None, depth: int, status: str = "open"
     }
 
 
+def _initial_state(
+    ucb_c: float = DEFAULT_UCB_C,
+    pw_k: float = DEFAULT_PW_K,
+    pw_alpha: float = DEFAULT_PW_ALPHA,
+) -> dict:
+    return {
+        "method": "alpha-mcts",
+        "next_candidate_num": 0,
+        "config": {
+            "ucb_c": ucb_c,
+            "pw_k": pw_k,
+            "pw_alpha": pw_alpha,
+        },
+        "nodes": {ROOT_ID: _new_node(ROOT_ID, None, 0, status="root")},
+    }
+
+
 def _next_candidate_id(state: dict) -> str:
-    state["next_candidate_num"] += 1
-    return f"{state['next_candidate_num']:04d}"
+    while True:
+        state["next_candidate_num"] += 1
+        cid = f"{state['next_candidate_num']:04d}"
+        if cid not in state["nodes"]:
+            return cid
 
 
 def _score_history(state: dict) -> list[float]:
@@ -164,21 +185,45 @@ def cmd_init(args: argparse.Namespace) -> None:
     ALPHAS_DIR.mkdir(parents=True, exist_ok=True)
     if _state_path().exists():
         raise SystemExit(f"state already exists: {_state_path()}")
-    state = {
-        "method": "alpha-mcts",
-        "next_candidate_num": 0,
-        "config": {
-            "ucb_c": args.ucb_c,
-            "pw_k": args.pw_k,
-            "pw_alpha": args.pw_alpha,
-        },
-        "nodes": {ROOT_ID: _new_node(ROOT_ID, None, 0, status="root")},
-    }
-    _save_state(state)
+    _save_state(_initial_state(args.ucb_c, args.pw_k, args.pw_alpha))
     print(f"ALPHAS_DIR: {ALPHAS_DIR}")
 
 
+def cmd_discard_pending(args: argparse.Namespace) -> None:
+    if not _state_path().exists():
+        return
+
+    state = _load_state()
+    nodes = state["nodes"]
+    pending_ids = sorted(
+        cid
+        for cid, node in nodes.items()
+        if cid != ROOT_ID and node.get("status") == "pending"
+    )
+    if not pending_ids:
+        return
+
+    pending = set(pending_ids)
+    for cid in pending_ids:
+        remaining_children = [child for child in nodes[cid]["children"] if child not in pending]
+        if remaining_children:
+            raise SystemExit(f"pending candidate has non-pending children: {cid}")
+
+    for node in nodes.values():
+        node["children"] = [child for child in node["children"] if child not in pending]
+    for cid in pending_ids:
+        del nodes[cid]
+
+    state["next_candidate_num"] = min(int(cid) for cid in pending_ids) - 1
+    _save_state(state)
+    for cid in pending_ids:
+        print(f"PENDING_WORKDIR: {_candidate_dir(cid)}")
+
+
 def cmd_next(args: argparse.Namespace) -> None:
+    if not _state_path().exists():
+        ALPHAS_DIR.mkdir(parents=True, exist_ok=True)
+        _save_state(_initial_state())
     state = _load_state()
 
     for cid, node in sorted(state["nodes"].items()):
@@ -225,6 +270,9 @@ def main() -> None:
     p_init.add_argument("--pw-k", type=float, default=DEFAULT_PW_K)
     p_init.add_argument("--pw-alpha", type=float, default=DEFAULT_PW_ALPHA)
     p_init.set_defaults(func=cmd_init)
+
+    p_discard_pending = sub.add_parser("discard-pending")
+    p_discard_pending.set_defaults(func=cmd_discard_pending)
 
     p_next = sub.add_parser("next")
     p_next.set_defaults(func=cmd_next)
