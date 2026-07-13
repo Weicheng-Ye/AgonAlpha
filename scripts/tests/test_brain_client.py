@@ -475,8 +475,15 @@ def test_simulate_candidates_keeps_multiple_jobs_inflight_and_names_results(tmp_
         "name-c",
     ]
     for key in "abc":
-        result = json.loads((tmp_path / "run" / "brain" / key / "result.json").read_text())
+        directory = tmp_path / "run" / "brain" / key
+        result = json.loads((directory / "result.json").read_text())
         assert result["alpha_id"] == f"alpha-{key}"
+        assert result["simulation_location"].endswith(f"/{key}")
+        assert {path.name for path in directory.iterdir()} == {
+            "alpha.json",
+            "candidate.json",
+            "result.json",
+        }
 
 
 def test_concurrency_limit_error_requeues_instead_of_becoming_terminal(tmp_path):
@@ -517,6 +524,37 @@ def test_simulate_candidates_writes_brain_summary_on_timeout(tmp_path):
     summary = json.loads(summary_path.read_text())
     assert summary["candidate_count"] == 1
     assert summary["completed_count"] == 0
+    directory = tmp_path / "run" / "brain" / "a"
+    assert {path.name for path in directory.iterdir()} == {
+        "candidate.json",
+        "creation.json",
+    }
+    assert set(json.loads((directory / "creation.json").read_text())) == {
+        "global_count_active",
+        "lease_id",
+        "location",
+        "requested_at",
+    }
+
+
+def test_brain_summary_rotates_previous_batches(tmp_path):
+    clock = Clock()
+    client = FakeBatchClient(clock)
+    run_dir = tmp_path / "run"
+    registry = simulation_registry(tmp_path, clock)
+
+    for key in "abc":
+        brain_client.simulate_candidates(
+            client, [candidate(key)], run_dir, registry=registry
+        )
+
+    def result_names(path):
+        return [result["name"] for result in json.loads(path.read_text())["results"]]
+
+    assert result_names(run_dir / "brain_summary.json") == ["name-c"]
+    assert result_names(run_dir / "brain_summary.1.json") == ["name-b"]
+    assert result_names(run_dir / "brain_summary.2.json") == ["name-a"]
+    assert not (run_dir / "brain_summary.3.json").exists()
 
 
 @pytest.mark.parametrize(
@@ -548,9 +586,6 @@ def test_simulate_candidates_resumes_saved_location_without_resubmitting(tmp_pat
     active_dir = run_dir / "brain" / "a"
     active_dir.mkdir(parents=True)
     brain_client.write_json(active_dir / "candidate.json", candidates[0])
-    brain_client.write_json(
-        active_dir / "payload.json", brain_client._payload(candidates[0])
-    )
     location = "https://brain.test/simulations/resumed-a"
     registry = simulation_registry(tmp_path, clock)
     lease_id = registry.try_acquire(
@@ -827,9 +862,6 @@ def test_simulate_candidates_rejects_corrupt_creation_json(tmp_path):
     directory = run_dir / "brain" / "a"
     directory.mkdir(parents=True)
     brain_client.write_json(directory / "candidate.json", candidates[0])
-    brain_client.write_json(
-        directory / "payload.json", brain_client._payload(candidates[0])
-    )
     brain_client.write_json(
         directory / "creation.json",
         {

@@ -45,6 +45,7 @@ DEFAULT_POLL_INTERVAL = 30.0
 SAFE_KEY = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 KEBAB_SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 ARTIFACTS_SUBDIR = "brain"
+SUMMARY_FILENAME = "brain_summary.json"
 
 
 class BrainAPIError(RuntimeError):
@@ -247,6 +248,24 @@ def write_json(path: Path, value: Any) -> None:
         encoding="utf-8",
     )
     temporary.replace(path)
+
+
+def write_rotated_json(path: Path, value: Any) -> None:
+    """Write the latest JSON at ``path`` and retain every previous version."""
+    if path.exists():
+        prefix = f"{path.stem}."
+        suffix = path.suffix
+        archives: list[tuple[int, Path]] = []
+        for candidate in path.parent.glob(f"{path.stem}.*{suffix}"):
+            version = candidate.name[len(prefix) : -len(suffix)]
+            if version.isdecimal() and not version.startswith("0"):
+                archives.append((int(version), candidate))
+        for version, candidate in sorted(archives, reverse=True):
+            candidate.replace(
+                path.with_name(f"{path.stem}.{version + 1}{path.suffix}")
+            )
+        path.replace(path.with_name(f"{path.stem}.1{path.suffix}"))
+    write_json(path, value)
 
 
 def read_json(path: Path) -> Any:
@@ -595,7 +614,10 @@ def _complete_candidate(
 ) -> dict[str, Any]:
     candidate = active.candidate
     detail = client.alpha(alpha_id)
-    write_json(active.directory / "alpha-before-name.json", detail)
+    # Retain one raw Alpha snapshot for troubleshooting or future API changes.
+    # On success it is replaced with the final, named Alpha; on validation
+    # failure it preserves the response that caused the rejection.
+    write_json(active.directory / "alpha.json", detail)
     if detail.get("id") != alpha_id:
         raise BrainProtocolError(f"Alpha response returned {detail.get('id')!r}")
     previous_key = claimed.get(alpha_id)
@@ -624,8 +646,7 @@ def _complete_candidate(
     if current_name not in {None, "", candidate["name"]}:
         raise AlphaReuseError(f"Alpha {alpha_id} is already named {current_name!r}")
     if current_name != candidate["name"]:
-        response = client.set_alpha_name(alpha_id, candidate["name"])
-        write_json(active.directory / "name-response.json", response.as_dict())
+        client.set_alpha_name(alpha_id, candidate["name"])
 
     try:
         final = client.alpha(alpha_id)
@@ -643,8 +664,11 @@ def _complete_candidate(
         "is": final.get("is"),
         "status": final.get("status"),
         "stage": final.get("stage"),
+        "simulation_location": active.location,
+        "requested_at": active.requested_at,
     }
     write_json(active.directory / "result.json", result)
+    (active.directory / "creation.json").unlink(missing_ok=True)
     claimed[alpha_id] = candidate["key"]
     return result
 
@@ -717,7 +741,6 @@ def simulate_candidates(
         if candidate_path.exists() and read_json(candidate_path) != candidate:
             raise ValueError(f"Saved candidate differs from input: {candidate['key']}")
         write_json(candidate_path, candidate)
-        write_json(directory / "payload.json", _payload(candidate))
         if (directory / "result.json").exists():
             result = read_json(directory / "result.json")
             alpha_id = result.get("alpha_id")
@@ -760,8 +783,8 @@ def simulate_candidates(
     started = client._monotonic()
     while pending or active:
         if client._monotonic() - started >= max_runtime:
-            write_json(
-                run_dir / "brain_summary.json",
+            write_rotated_json(
+                run_dir / SUMMARY_FILENAME,
                 _summary(candidates, results, failures, pending, active),
             )
             raise BatchTimeout("Batch deadline reached; rerun the command to resume")
@@ -776,7 +799,7 @@ def simulate_candidates(
             pending.pop(0)
             requested_at = client._wall_time()
             try:
-                location, response = client.create_simulation(_payload(candidate))
+                location, _response = client.create_simulation(_payload(candidate))
             except (BrainAPIError, requests.RequestException) as error:
                 registry.release(lease_id)
                 if _is_concurrency_limit_error(error):
@@ -803,7 +826,6 @@ def simulate_candidates(
                     "requested_at": requested_at,
                     "lease_id": lease_id,
                     "global_count_active": True,
-                    "response": response.as_dict(),
                 },
             )
             active[candidate["key"]] = ActiveSimulation(
@@ -818,7 +840,6 @@ def simulate_candidates(
             made_request = True
             try:
                 response = client.simulation_status(item.location)
-                write_json(item.directory / "status-latest.json", response.as_dict())
                 body = response.body
                 if not isinstance(body, dict):
                     raise BrainProtocolError(f"Simulation status for {key} is invalid")
@@ -853,7 +874,7 @@ def simulate_candidates(
             client._sleep(SIMULATION_SLOT_RETRY_SECONDS)
 
     summary = _summary(candidates, results, failures, pending, active)
-    write_json(run_dir / "brain_summary.json", summary)
+    write_rotated_json(run_dir / SUMMARY_FILENAME, summary)
     return summary
 
 
