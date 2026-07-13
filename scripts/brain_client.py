@@ -306,9 +306,7 @@ def _checks_resolved(checks: list[dict[str, Any]]) -> bool:
             has_pending = True
         elif result == "FAIL":
             has_failure = True
-    if not has_pending:
-        return True
-    return has_failure
+    return has_failure or not has_pending
 
 
 class BrainClient:
@@ -502,18 +500,15 @@ def _normalized_candidate(source: Mapping[str, Any]) -> dict[str, Any]:
             f"Candidate must use name instead of {' and '.join(unsupported)}"
         )
     name = source.get("name")
-    key = name
     settings = source.get("settings")
-    if not isinstance(key, str) or not SAFE_KEY.fullmatch(key):
-        raise ValueError(f"Candidate has an unsafe name: {key!r}")
-    if not isinstance(name, str) or not name:
-        raise ValueError(f"Candidate {key} has no name")
+    if not isinstance(name, str) or not SAFE_KEY.fullmatch(name):
+        raise ValueError(f"Candidate has an unsafe name: {name!r}")
     if not isinstance(expression, str) or not expression.strip():
-        raise ValueError(f"Candidate {key} has no expression")
+        raise ValueError(f"Candidate {name} has no expression")
     if not isinstance(settings, dict):
-        raise ValueError(f"Candidate {key} settings are not an object")
+        raise ValueError(f"Candidate {name} settings are not an object")
     return {
-        "key": key,
+        "key": name,
         "name": name,
         "type": source.get("type", "REGULAR"),
         "regular": expression,
