@@ -611,5 +611,254 @@ def test_alpha_without_creation_time_is_never_renamed(tmp_path):
     )
 
     assert summary["completed_count"] == 0
+    assert len(summary["failures"]) == 1
     assert "no valid dateCreated" in summary["failures"][0]["error"]["message"]
     assert not [event for event in client.events if event[0] == "name"]
+
+
+# --- _checks_resolved unit tests ---
+
+
+@pytest.mark.parametrize(
+    ("checks", "expected"),
+    [
+        ([], False),
+        ([{"name": "A", "result": "PASS"}], True),
+        ([{"name": "A", "result": "PASS"}, {"name": "B", "result": "PASS"}], True),
+        ([{"name": "A", "result": "FAIL"}], True),
+        ([{"name": "A", "result": "PENDING"}], False),
+        ([{"name": "A", "result": "PASS"}, {"name": "B", "result": "PENDING"}], False),
+        (
+            [{"name": "A", "result": "FAIL"}, {"name": "B", "result": "PENDING"}],
+            True,
+        ),
+        (
+            [
+                {"name": "A", "result": "FAIL"},
+                {"name": "B", "result": "PASS"},
+                {"name": "C", "result": "PENDING"},
+            ],
+            True,
+        ),
+    ],
+)
+def test_checks_resolved_covers_all_state_combinations(checks, expected):
+    assert brain_client._checks_resolved(checks) is expected
+
+
+# --- submission_checks edge cases ---
+
+
+def test_submission_checks_keeps_polling_on_empty_checks_list(tmp_path):
+    clock = Clock()
+    empty = {"is": {"checks": []}}
+    resolved = {"is": {"checks": [{"name": "A", "result": "PASS"}]}}
+    session = FakeSession(
+        requests_=(response(200, empty), response(200, resolved))
+    )
+    client = brain_client.BrainClient(
+        write_env(tmp_path / ".env"),
+        session=session,
+        sleep=clock.sleep,
+        monotonic=clock.monotonic,
+        wall_time=clock.wall,
+    )
+    client.authenticated = True
+
+    assert client.submission_checks("alpha-1") == resolved
+    assert len(clock.sleeps) == 1
+
+
+def test_submission_checks_raises_batch_timeout(tmp_path):
+    clock = Clock()
+    session = FakeSession(requests_=(response(200, None), response(200, None)))
+    client = brain_client.BrainClient(
+        write_env(tmp_path / ".env"),
+        session=session,
+        sleep=clock.sleep,
+        monotonic=clock.monotonic,
+        wall_time=clock.wall,
+    )
+    client.authenticated = True
+
+    with pytest.raises(brain_client.BatchTimeout, match="timed out"):
+        client.submission_checks("alpha-1", max_wait=1.0)
+
+
+def test_submission_checks_raises_protocol_error_on_missing_checks(tmp_path):
+    clock = Clock()
+    session = FakeSession(requests_=(response(200, {"is": {}}),))
+    client = brain_client.BrainClient(
+        write_env(tmp_path / ".env"),
+        session=session,
+        sleep=clock.sleep,
+        monotonic=clock.monotonic,
+        wall_time=clock.wall,
+    )
+    client.authenticated = True
+
+    with pytest.raises(brain_client.BrainProtocolError, match="omitted is.checks"):
+        client.submission_checks("alpha-1")
+
+
+def test_submission_checks_raises_protocol_error_on_invalid_body(tmp_path):
+    clock = Clock()
+    session = FakeSession(requests_=(response(200, 42),))
+    client = brain_client.BrainClient(
+        write_env(tmp_path / ".env"),
+        session=session,
+        sleep=clock.sleep,
+        monotonic=clock.monotonic,
+        wall_time=clock.wall,
+    )
+    client.authenticated = True
+
+    with pytest.raises(brain_client.BrainProtocolError, match="invalid"):
+        client.submission_checks("alpha-1")
+
+
+# --- CLI exit code ---
+
+
+def test_check_command_exits_nonzero_on_failed_check(tmp_path, monkeypatch):
+    checks = {"is": {"checks": [{"name": "A", "result": "FAIL"}]}}
+    fake = FakeSession(
+        posts=(response(201),),
+        requests_=(response(200, checks),),
+    )
+    monkeypatch.setattr("sys.argv", [
+        "brain_client", "--env", str(write_env(tmp_path / ".env")),
+        "check", "alpha-1",
+    ])
+    monkeypatch.setattr(requests, "Session", lambda: fake)
+
+    with pytest.raises(SystemExit) as exc_info:
+        brain_client.main()
+    assert exc_info.value.code == 1
+
+
+def test_check_command_exits_zero_on_all_pass(tmp_path, monkeypatch):
+    checks = {"is": {"checks": [{"name": "A", "result": "PASS"}]}}
+    fake = FakeSession(
+        posts=(response(201),),
+        requests_=(response(200, checks),),
+    )
+    monkeypatch.setattr("sys.argv", [
+        "brain_client", "--env", str(write_env(tmp_path / ".env")),
+        "check", "alpha-1",
+    ])
+    monkeypatch.setattr(requests, "Session", lambda: fake)
+
+    brain_client.main()
+
+
+# --- request reauthentication ---
+
+
+def test_request_raises_on_second_consecutive_401(tmp_path):
+    session = FakeSession(
+        posts=(response(201), response(201)),
+        requests_=(response(401), response(401)),
+    )
+    client = brain_client.BrainClient(
+        write_env(tmp_path / ".env"), session=session, sleep=lambda _: None
+    )
+
+    with pytest.raises(brain_client.BrainAPIError) as exc_info:
+        client.request("GET", "alphas/test")
+    assert exc_info.value.response.status_code == 401
+
+
+# --- load_env ---
+
+
+def test_load_env_handles_utf8_bom(tmp_path):
+    path = tmp_path / ".env"
+    path.write_bytes(
+        b"\xef\xbb\xbf"
+        b'BRAIN_EMAIL="user@example.com"\n'
+        b"BRAIN_PASSWORD=secret\n"
+    )
+    env = brain_client.load_env(path)
+    assert env["BRAIN_EMAIL"] == "user@example.com"
+    assert env["BRAIN_PASSWORD"] == "secret"
+
+
+# --- retry_after_seconds ---
+
+
+def test_retry_after_parses_numeric_seconds():
+    assert brain_client.retry_after_seconds({"Retry-After": "5"}, 3.0) == 5.0
+    assert brain_client.retry_after_seconds({"Retry-After": "0"}, 3.0) == 0.0
+
+
+# --- load_candidates ---
+
+
+def test_candidate_loading_accepts_wrapped_candidates_object(tmp_path):
+    rows = [{"name": "a", "regular": "rank(close)", "settings": {"delay": 1}}]
+    path = tmp_path / "candidates.json"
+    path.write_text(json.dumps({"candidates": rows}), encoding="utf-8")
+    result = brain_client.load_candidates(path)
+    assert len(result) == 1
+    assert result[0]["name"] == "a"
+
+
+def test_candidate_loading_rejects_duplicate_names(tmp_path):
+    rows = [
+        {"name": "alpha-one", "regular": "rank(close)", "settings": {"delay": 1}},
+        {"name": "alpha-one", "regular": "rank(open)", "settings": {"delay": 2}},
+    ]
+    path = tmp_path / "candidates.json"
+    path.write_text(json.dumps(rows), encoding="utf-8")
+    with pytest.raises(ValueError, match="Duplicate candidate name"):
+        brain_client.load_candidates(path)
+
+
+# --- SimulationRegistry ---
+
+
+def test_simulation_registry_update_location_and_reset(tmp_path):
+    clock = Clock()
+    registry = simulation_registry(tmp_path, clock)
+    lease_id = registry.try_acquire(candidate="a", workdir=tmp_path / "a")
+    assert lease_id is not None
+
+    assert registry.update_location(lease_id, "https://brain.test/sim/1")
+    assert registry.snapshot()[lease_id]["location"] == "https://brain.test/sim/1"
+    assert not registry.update_location("nonexistent", "https://brain.test/sim/2")
+
+    registry.try_acquire(candidate="b", workdir=tmp_path / "b")
+    assert len(registry.snapshot()) == 2
+    registry.reset()
+    assert registry.snapshot() == {}
+
+
+# --- simulate_candidates resume validation ---
+
+
+def test_simulate_candidates_rejects_corrupt_creation_json(tmp_path):
+    clock = Clock()
+    client = FakeBatchClient(clock)
+    candidates = [candidate("a")]
+    run_dir = tmp_path / "run"
+    directory = run_dir / "a"
+    directory.mkdir(parents=True)
+    brain_client.write_json(directory / "candidate.json", candidates[0])
+    brain_client.write_json(
+        directory / "payload.json", brain_client._payload(candidates[0])
+    )
+    brain_client.write_json(
+        directory / "creation.json",
+        {
+            "location": None,
+            "requested_at": 1.0,
+            "lease_id": None,
+            "global_count_active": False,
+        },
+    )
+
+    with pytest.raises(ValueError, match="Corrupt creation.json"):
+        brain_client.simulate_candidates(
+            client, candidates, run_dir, registry=simulation_registry(tmp_path, clock)
+        )
