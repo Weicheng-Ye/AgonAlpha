@@ -416,6 +416,66 @@ def cmd_update(args: argparse.Namespace) -> None:
         print(f"UPDATED: {cid} score={score:.4g}")
 
 
+def _best_metrics(cid: str) -> tuple[float | None, float | None]:
+    path = _candidate_dir(cid) / "brain_summary.json"
+    if not path.exists():
+        return None, None
+    try:
+        with path.open(encoding="utf-8") as f:
+            summary = json.load(f)
+    except (ValueError, OSError):
+        return None, None
+    best_fitness: float | None = None
+    best_sharpe: float | None = None
+    for result in summary.get("results", []):
+        is_data = result.get("is") if isinstance(result, dict) else None
+        if not isinstance(is_data, dict):
+            continue
+        fitness = is_data.get("fitness")
+        if isinstance(fitness, (int, float)) and (
+            best_fitness is None or fitness > best_fitness
+        ):
+            best_fitness = fitness
+            sharpe = is_data.get("sharpe")
+            best_sharpe = sharpe if isinstance(sharpe, (int, float)) else None
+    return best_fitness, best_sharpe
+
+
+def cmd_tree(args: argparse.Namespace) -> None:
+    if not _state_path().exists():
+        raise SystemExit("no state file found")
+    with _state_lock():
+        state = _load_state()
+    nodes = state["nodes"]
+
+    def label(node_id: str) -> str:
+        node = nodes[node_id]
+        status = node.get("status", "?")
+        visits = node.get("visits", 0)
+        score = node.get("score")
+        tag = f"{status}, v={visits}"
+        if score is not None:
+            tag += f", s={score:.4g}"
+        parts = [node_id, f"[{tag}]"]
+        if node_id != ROOT_ID and status == "done":
+            fitness, sharpe = _best_metrics(node_id)
+            if fitness is not None:
+                parts.append(f"fitness={fitness:.3g}")
+            if sharpe is not None:
+                parts.append(f"sharpe={sharpe:.3g}")
+        return " ".join(parts)
+
+    def walk(node_id: str, prefix: str) -> None:
+        children = nodes[node_id].get("children", [])
+        for i, child_id in enumerate(children):
+            is_last = i == len(children) - 1
+            print(f"{prefix}{'└── ' if is_last else '├── '}{label(child_id)}")
+            walk(child_id, prefix + ("    " if is_last else "│   "))
+
+    print(label(ROOT_ID))
+    walk(ROOT_ID, "")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -436,6 +496,9 @@ def main() -> None:
     p_update.add_argument("--candidate-id", required=True)
     p_update.add_argument("--score", required=True, type=float)
     p_update.set_defaults(func=cmd_update)
+
+    p_tree = sub.add_parser("tree")
+    p_tree.set_defaults(func=cmd_tree)
 
     args = parser.parse_args()
     args.func(args)
